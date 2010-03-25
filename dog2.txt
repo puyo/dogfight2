@@ -1,0 +1,211 @@
+-----------------------------------------------------------------------------
+                         Dogfight 2.01 Documentation
+-----------------------------------------------------------------------------
+Best viewed with edit.com ;)
+
+CONTENTS
+
+1. INSTALLATION
+2. PLAY GUIDE
+3. INITIAL KEY SETTINGS
+4. VERSION HISTORY
+5. TROUBLESHOOTING
+
+-----------------------------------------------------------------------------
+1. INSTALLATION
+-----------------------------------------------------------------------------
+
+Please refer to the file README.TXT for installation instructions.
+
+
+
+-----------------------------------------------------------------------------
+2. PLAY GUIDE
+-----------------------------------------------------------------------------
+
+Upon starting Dogfight 2, you should see a title screen
+with some options. Use the arrow keys to move up and down
+the options and press enter to select one.
+
+Choose Options to define some of the options for the game.
+Use up and down to choose an option, left and right/enter to
+change it. All options have boundaries. When a boundary is
+exceeded, in most cases the option's value will change to the
+opposite limit.
+
+Please note that there are more options that aren't supported
+by the in-game options screen. These can be changed by
+editing the file dog2.cfg in your base Dogfight 2 directory.
+Dogfight 2 is always a work in progress, so options are being
+added all the time. It is difficult to add support in the game
+for all of them.
+
+The most important option is the number of players. Make
+the appropriate choice and exit the options screen. Now start
+a game from the title screen.
+
+If you experience problems, read the troubleshooting section
+of this document and if it does not help, please contact me.
+
+If the game crashes, please email me (or otherwise inform me)
+and explain to me briefly why you think it crashed. I'll do
+some debugging and play testing and see if I can fix the
+problem.
+
+
+-----------------------------------------------------------------------------
+3. INITIAL KEY SETTINGS
+-----------------------------------------------------------------------------
+
+They are listed in the format
+   UP
+ L DN R   FIRE
+
+Player 1     Player 2     Player 3    Player 4
+  w            y            p            /\
+a s d   q    g h j   t    l ; '  o    <- \/ ->  /
+
+NOTE: - Player 4 uses the arrow keys, in case that was
+        ambiguous :)
+      - You can change the controls for the game by
+        editing dog2.cfg, referring to keys.txt for a list
+        of key codes. 
+
+
+-----------------------------------------------------------------------------
+4. VERSION HISTORY
+-----------------------------------------------------------------------------
+
+YET TO BE ADDED:
+- A particle system to add sparks and... other things (if you played
+  Dogfight 1 you may know what I'm hinting at).
+  This is actually in the code already, but doesn't quite work
+  and so is commented out. I'm seeking remedial help for the hours
+  spent debugging and failing miserably with the little shmuckers,
+  so please don't complain.
+- Sound.
+- Some pickup items which, when collected, award temporary powers.
+- Options to play restricted games such as "First to N points wins",
+  "Highest score in N minutes:seconds wins"
+  These would also involve some sort of winning/bragging screen :)
+- Heat seeking missiles/different weapon types.
+- More realistic vehicle motion - possibly of various types.
+- Support for ALL options on the in-game options screen (ho hum).
+
+
+VERSION 2.01
+
+BUGS FIXED/FEATURES ADDED:
+- Explosions :) If the game crashes now, I'll scream, run around about 10
+  times and promptly not do anything for the rest of my life. Maybe.
+
+- The scoring system has changed, at the suggestion of a good friend
+  Dusan. Now, if two players crash and if one dies as a result, the
+  other player receives a point. That way, every single player death
+  results in a point being awarded somewhere, and players can't just
+  deliberately crash into other players when their life gets low to
+  restart with full health and no penalty.
+
+- There are now options to save changes made on the in-game options
+  screen, and to restore default settings.
+  Also, there are now options to change the vehicle, shot and backdrop
+  graphics and the player's energy from within the options screen
+  (exciting I know).
+
+- The orange plane is now purple to prevent confusion with the red plane.
+  Note that to change the colour of planes, simply edit the palette
+  of data\pal.pcx and change indexes 32 to 95. Unless these are gradiented,
+  the planes may look odd. Also note that backdrops use this palette too,
+  and any entries they find useful, including vehicle colours. So if the
+  backdrop contains a lot of red, and you change the red vehicle colours
+  to pink, the corresponding red values in the backdrop will change to
+  pink also. To get around this problem, I use a paint program like
+  Paint Shop Pro which can apply new palettes to images as best they can,
+  instead of just maintaining the same palette indexes.
+
+- At startup, if the files specified in dog2.cfg are not found, the game
+  will simply exit, thereby preventing errors :)
+
+- For all of the creeps with faster computers than mine who have been
+  complaining, I've added an option to delay each frame by a number
+  of milliseconds. Fiddling with this value should solve problems of
+  the game running too quickly.
+
+- The fonts, both large and small have been replaced with higher contrast,
+  easier-to-read fonts.
+
+- Different screens now fade in quickly, instead of instantly flashing up,
+  reducing the confusion induced when someone who thinks they know the game
+  inside-out goes flicking through them.
+
+- A slight pause has been added before the game starts. Previously
+  the game would instantly start when "Start Game" was chosen.
+  This combined with the fade in, should give players a little warning
+  that they should be ready.
+
+- Got rid of the "Press any key to continue..." pause at startup.
+
+- Cleaned up the source for the options screen and initialisation
+  routine. I'm much happier with it now :)
+
+
+2.00
+
+First playable release.
+Pretty dry-bones version.
+
+
+-----------------------------------------------------------------------------
+5. TROUBLESHOOTING
+-----------------------------------------------------------------------------
+
+PROBLEM
+-------
+The game runs far too quickly.
+
+SOLUTION
+--------
+Edit the options and try changing the Frame Delay option.
+Try setting it to values of 1, 2 or 3 ms until you find a
+speed you're comfortable with.
+If you still have problems, please tell me. I will
+investigate a more thorough solution.
+
+
+PROBLEM
+-------
+The game runs too slowly.
+
+SOLUTION
+--------
+Unfortunately, the only way to solve this is to edit all of
+the options to make the game faster. This will not improve
+the frame rate - for example, vehicles will just move further
+per frame.
+
+
+PROBLEM
+-------
+In the game, holding down too many keys will prevent any more
+keys being read, preventing other players from controlling
+their vehicle.
+
+SOLUTION
+--------
+This is a hardware limitation.
+The only solution to this I can see is to include a
+NULL-modem cable option so that at least people with two
+computers hooked together can avoid this problem.
+Other than that... well... it might just make the game a
+bit more exciting when fights break out over the keyboard..?
+*meek smile*
+
+
+-----------------------------------------------------------------------------
+Gregory McIntyre 1998
+
+gregm@pcug.org.au [1]
+http://www.pcug.org.au/~gregm/ [1]
+
+--
+[1] These details are out of date.
